@@ -1,8 +1,0 @@
-[2013-02-01 16:35:49.477] [WARN] webcall-logger - Express server listening on port 3000
-[2013-02-01 16:38:18.959] [INFO] webcall-logger - Connessione utente username:admin authId:1 conferenceId:1 userId: role:moderator
-[2013-02-01 16:38:19.017] [DEBUG] webcall-logger - log numero utenti connessi
-[2013-02-01 16:38:21.880] [WARN] webcall-logger - DISCONNESSIONE username: admin SE NON EFFETTUATA CORRETTAMENTE nella tabella 1_conference_participants NON VERRA AGGIORNATO il campo disconnected_at:2013-2-1 16:38:21  per id= -conferenceId:1
-[2013-02-01 16:38:21.880] [WARN] webcall-logger - Moderatore disconnesso STATISTICHE NON VERRANNO AGGIORNATE per authId:1 conferenceId:1 
-[2013-02-01 16:43:07.048] [WARN] webcall-logger - Express server listening on port 3000
-[2013-02-01 16:43:31.662] [INFO] webcall-logger - Connessione utente username:admin authId:1 conferenceId:1 userId: role:moderator
-[2013-02-01 16:43:31.664] [DEBUG] webcall-logger - log numero utenti connessi
