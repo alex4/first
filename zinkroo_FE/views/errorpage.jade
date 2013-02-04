@@ -1,0 +1,14 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap/style.css')
+		script
+			var message = '#{message}';
+		script(src='/javascripts/end-ios-bridge.js')
+
+	body
+		h1= title
+		p #{message}  
+
+

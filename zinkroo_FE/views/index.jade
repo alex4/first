@@ -1,0 +1,132 @@
+extends layout
+
+block content
+
+	div#loading
+		connessione in corso...
+
+	div#navbar.navbar.navbar-inverse.navbar-fixed-top
+		div.navbar-inner
+			div.container
+				div.buttons-live.pull-right
+					span#connectionTotalTime
+						i.icon-time
+						span 00:00:00
+						a#latency.tooltip-nav(rel="tooltip", data-original-title="Latency: ")
+						a#uploadSpeed.tooltip-nav(rel="tooltip", data-original-title="Upload: ")
+						a#downloadSpeed.tooltip-nav(rel="tooltip", data-original-title="Download: ")
+						a#disconnectLink.btn.btn-danger.btn-small(href="#", rel="tooltip", data-original-title="Esc", onClick="disconnect();")
+							i.icon-off.icon-white
+							span Chiudi la sessione
+				a.brand MIB
+				div.session-title.truncate Programma di comunicazione e formazione continua sul melanoma
+	
+	div#sessionContent.container(clear:both")
+		div.nav-btns
+		div.container
+			div.content
+				div#columnWrap
+					div#column2.span3
+						div.video-wrapper(style="margin: 0px; overflow: hidden;")
+							ul#my-connection.connections-box
+							div.my-camera-cmd
+								div#vol-microfono.pull-right
+								div#btn-live
+									ul
+										li
+											a#publishLink.btn.btn-success.btn-small(href="#", rel="tooltip", data-original-title="Live", onClick="startPublishing()")
+												i.icon-facetime-video.icon-white
+												span Broadcast
+										li
+											a#unpublishLink.btn.btn-warning.btn-small(href="#", rel="tooltip", data-original-title="Pause", onClick="stopPublishing()")
+												i.icon-pause.icon-white
+												span Pause
+																			
+							hr(style="margin-top:0px; margin-bottom:10px;")
+							
+							ul.nav.nav-tabs
+								li.active
+									a(href="#tab-chat", data-toggle="tab")
+										i.icon-comment
+								li
+									a(href="#tab-subscribers", data-toggle="tab")
+										i.icon-user
+								li
+									a(href="#tab-download", data-toggle="tab")
+										i.icon-inbox
+								li#nav-tab-tools
+									a(href="#tab-tools", data-toggle="tab")
+										i.icon-cog
+								
+							div.tab-content
+								div#tab-chat.tab-pane.active
+									div.chat-wrapper(style="clear: both; overflow: hidden; margin: 0px;")
+										div#chatBoard
+										form.form-inline
+											input#chatPhrase.span10(type="text", placeholder="Type something...", onKeyPress="javascript:return checkSubmitChatPhrase(event);return false;")
+											a.btn.btn-small.btn-info(href="", onclick="javascript:sendChatPhrase();return false;", title="invia")
+													i.icon-edit.icon-white
+								div#tab-subscribers.tab-pane
+									p.lead Utenti collegati
+									hr
+									div#subscribers-list
+										ul.subs-list
+								div#tab-download.tab-pane
+									p.lead Documenti allegati 
+										a#add-new-doc.btn.btn-mini.btn-info.pull-right(href="#", title="aggiungi nuovo", style="margin-top:3px; margin-right:5px;)
+											i.icon-folder-open.icon-white
+									hr
+									div#document-list
+										ul.doc-list
+											li
+												a(href="#") Documento-1.pdf
+											li
+												a(href="#") Documento-2.pdf
+								div#tab-tools.tab-pane
+									div.settings-conference
+										div#conference-settings(style="margin-bottom:10px;")
+											p.lead Modalità conference
+											hr
+											span Abilita o disabilita gli interventi vocali di tutti i partecipanti.
+											div.btn-group
+												a#enableAllAudio.btn.btn-small(href="#", rel="tooltip", data-original-title="All audio on", onClick="javascript:enableAllAudio()")
+													i.icon-volume-up
+													span Dibattito
+												a#disableAllAudio.btn.btn-small(href="#", rel="tooltip", data-original-title="All audio off", onClick="javascript:disableAllAudio()")
+													i.icon-volume-off
+													span Ascolto
+						
+					div#column1.span6
+						div#resize-div.resize 
+							a#resizeFull.btn.btn-mini.btn-info.pull-right(href="#", rel="tooltip", data-original-title="resize-full", onClick="javascript:hideColumnUsers()")
+								span Resize full
+								i.icon-resize-full.icon-white
+							a#resizeSmall.btn.btn-mini.btn-info.pull-right(href="#", rel="tooltip", data-original-title="resize-small", onClick="javascript:showColumnUsers()")
+								span Resize small
+								i.icon-resize-small.icon-white
+						div.main-slide
+							img#imgSlideShown(src="", width="100%")
+								
+						div#slide-controller
+							div.box-pager
+								ul.pager
+									li.previous
+										a#previousPage(href="#", onClick="javascript:previousPage();return false;")
+											i.icon-chevron-left.icon-white
+									li#slideShownNum.badge.badge-info
+									li.next
+										a#nextPage(href="#", onClick="javascript:nextPage();return false;")
+											i.icon-chevron-right.icon-white
+							div.box-thumb
+								div(style="position:relative; z-index: 200;")
+									div
+										div.slides
+											div#slides.thumb-container
+					
+					div.colonna-utenti.span3
+						ul#connections.connections-box
+
+			div#footer.row
+				hr
+				small axenso srl &copy; 2012 - Powered by 
+					a(href="http://www.axenso.com/", target="_blank") Axenso

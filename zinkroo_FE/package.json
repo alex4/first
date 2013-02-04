@@ -1,0 +1,16 @@
+{
+  "name": "zinkroo_FE",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "jade": "*",
+    "opentok" : "0.3.x",
+    "socket.io": "*",
+    "mysql": "2.0.0-alpha5",
+    "log4js": "*"
+  }
+}

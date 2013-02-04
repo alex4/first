@@ -1,0 +1,72 @@
+extends ipadlayout
+
+block content
+
+	div#sessionContent.container
+		
+		div.container
+			div.content
+				div.row-fluid
+					div.span12
+						div#columnWrap.row-fluid
+							div#column2.span3
+								div.video-wrapper(style="margin: 0px; overflow: hidden;")
+									ul#my-connection.connections-box
+									ul.nav.nav-tabs
+										li.active
+											a(href="#tab-chat", data-toggle="tab")
+												i.icon-comment
+										li
+											a(href="#tab-subscribers", data-toggle="tab")
+												i.icon-user
+										li
+											a(href="#tab-tools", data-toggle="tab")
+												i.icon-info-sign
+								div.tab-content
+									div#tab-chat.tab-pane.active
+										div.chat-wrapper(style="clear: both; min-width: 100px; overflow: hidden; margin: 0px; margin-top:5px;")
+											div#chatBoard
+											form.form-inline
+												input#chatPhrase.span10(type="text", placeholder="Type something...", onKeyPress="javascript:return checkSubmitChatPhrase(event);return false;")
+												a.btn.btn-info(href="", onclick="javascript:sendChatPhrase();return false;", title="invia")
+													i.icon-edit
+									div#tab-subscribers.tab-pane
+										p.lead Utenti collegati
+										hr
+										div#subscribers-list
+											ul.subs-list
+									div#tab-tools.tab-pane
+										div.info-conference
+											p.lead Info WebCall
+											hr
+											span#uploadSpeed(rel="tooltip", data-original-title="Upload: ")
+											hr
+											span#downloadSpeed(rel="tooltip", data-original-title="Download: ")
+											hr
+											span#latency(rel="tooltip", data-original-title="Latency: ")
+						
+							div#column1.span6
+								div.main-slide(style="margin: 0px;")
+									img#imgSlideShown(src="", width="100%")
+								div#slide-controller(style="display: none;")
+									div.box-pager
+										ul.pager
+											li.previous
+												a#previousPage(href="#", onClick="javascript:previousPage();return false;")
+													i.icon-chevron-left
+											li#slideShownNum.badge.badge-info
+											li.next
+												a#nextPage(href="#", onClick="javascript:nextPage();return false;")
+													i.icon-chevron-right
+									div.row-fluid.box-thumb
+										div.span12(style="position:relative; z-index: 200;")
+											div.row-fluid
+												div.slides
+													div#slides.thumb-container
+							
+		
+		hr
+		div#footer.row
+			small axenso srl &copy; 2012 - Powered by 
+				a(href="http://www.axenso.com/", target="_blank") Axenso
+
